@@ -1,5 +1,7 @@
 package com.springboot.soapwsclient.client;
 
+import java.util.Objects;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;
 import org.springframework.stereotype.Service;
@@ -18,7 +20,7 @@ public class LoanEligibilityClient {
 	private WebServiceTemplate webServiceTemplate;
 
 	public Acknowledgement getLoanStatus(CustomerRequest request) {
-		if(request == null || StringUtils.isEmpty(request)) {
+		if(Objects.isNull(request)) {
 			throw new RuntimeException("Please provide customer request details");
 		}
 		webServiceTemplate = new WebServiceTemplate(jaxb2Marshaller);
