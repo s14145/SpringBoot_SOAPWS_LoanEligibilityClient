@@ -25,7 +25,7 @@ public class LoanEligibilityClient {
 		}
 		webServiceTemplate = new WebServiceTemplate(jaxb2Marshaller);
 		Acknowledgement acknowledgement = (Acknowledgement) webServiceTemplate
-				.marshalSendAndReceive("http://localhost:8080/ws/loanEligibility.wsdl", request);
+				.marshalSendAndReceive("http://localhost:9090/ws/loanEligibility.wsdl", request);
 		return acknowledgement;
 	}
 
